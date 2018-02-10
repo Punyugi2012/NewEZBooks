@@ -15,6 +15,14 @@ class CreateAccountsTable extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('account_number');
+            $table->string('expired_date');
+            $table->string('cvv');
+            $table->integer('member_id')->unsigned();
+            $table->foreign('member_id')
+                ->references('id')
+                ->on('members')
+                ->onDelete('cascade');
             $table->timestamps();
         });
     }
