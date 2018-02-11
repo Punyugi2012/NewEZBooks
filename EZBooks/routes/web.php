@@ -12,5 +12,6 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return "working";
 });
+Route::get('/admin-login', 'AdminController@onLogin');
