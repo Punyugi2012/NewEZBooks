@@ -14,4 +14,10 @@
 Route::get('/', function () {
     return "working";
 });
-Route::get('/admin-login', 'AdminController@onLogin');
+Route::get('/admin/login', 'AdminController@onLogin');
+Route::post('/admin/login', 'AdminController@checkExistence');
+Route::group(['middleware' => ['admin'], 'prefix'=> 'admin'], function() {
+    Route::get('dashboard', function() {
+        return 'Admin Working';
+    });
+});

@@ -7,7 +7,8 @@
         <div class="uk-card uk-card-default uk-card-body uk-width-2-3">
             <h3 class="uk-card-title">เข้าสู่ระบบ@แอดมิน</h3>
             <div class="uk-margin">
-                <form>
+                <form action="{{url('/admin/login')}}" method="POST">
+                    {{ csrf_field() }}
                     <fieldset class="uk-fieldset">
                         <div class="uk-margin">
                             <label class="uk-form-label" for="username">USERNAME:</label>
